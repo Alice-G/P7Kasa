@@ -45,8 +45,8 @@ function NavBar() {
             <NavLinkContainer>
                <NavLink
                   to="/"
-                  className={
-                     ({ isActive }) => (isActive ? 'activeStyle' : 'link') // TEST or undefined because default?
+                  className={({ isActive }) =>
+                     isActive ? 'activeStyle' : 'link'
                   }
                   end
                >

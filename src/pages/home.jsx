@@ -1,10 +1,11 @@
 import React from 'react'
-import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 
 import GlobalStyle from '../style/GlobalStyle'
 import styled from 'styled-components'
 import colors from '../style/colors'
+
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 import homeBannerBackground from '../assets/eric-muhr-P_XxsdVgtpQ-unsplash.png'
@@ -187,7 +188,6 @@ function Home() {
                   <Link key={flat.id} to={`/logement/${flat.id}`}>
                      <Flat
                         key={flat.id}
-                        // id={flat.id}
                         title={flat.title}
                         cover={flat.cover}
                      />

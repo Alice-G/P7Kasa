@@ -87,7 +87,6 @@ export default function Carousel() {
             return (
                <PhotoContainer key={index}>
                   {index === currentPic && (
-                     // TODO del div after
                      <div>
                         <FlatPhoto src={img} alt="Photos du logement" />
                      </div>

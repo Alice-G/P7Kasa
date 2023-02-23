@@ -103,6 +103,7 @@ function APropos() {
                   <OverShadow />
                </BannerImage>
             </BannerContainer>
+
             <ContentContainer>
                <Collapse
                   title="Fiabilité"

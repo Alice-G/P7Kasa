@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from 'react'
-// import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import GlobalStyle from '../style/GlobalStyle'
 import colors from '../style/colors'
 import styled from 'styled-components'
 
 import Header from '../components/Header'
-import Collapse from '../components/Collapse'
-import Footer from '../components/Footer'
-
-import Error from '../pages/notFound'
-
-import { useParams } from 'react-router-dom'
-
-import jsonFlats from '../datas/logements.json'
 import Carousel from '../components/Carousel'
 import Rating from '../components/RatingStars'
+import Collapse from '../components/Collapse'
+import Footer from '../components/Footer'
+import Error from '../pages/notFound'
+
+import jsonFlats from '../datas/logements.json'
 
 // PAGE STYLING
 // full page
@@ -199,14 +196,12 @@ function FicheLogement() {
    const urlId = useParams() // get id from url
    const [selectedFlat, setSelectedFlat] = useState('') // initialize which flat we get from json, for now it's empty
 
-   // const navigate = useNavigate();
-
    useEffect(() => {
       const clickedId = jsonFlats.find((object) => object.id === urlId.id)
 
       setSelectedFlat(clickedId)
       // console.log(clickedId)
-   }, [urlId.id]) // only at first render // ASK should I do that?
+   }, [urlId.id]) // only at first render
    // if selectedFlat is undefined = url does not exsist
    if (!selectedFlat) {
       return <Error />
