@@ -6,30 +6,23 @@ import jsonFlats from '../datas/logements.json'
 import svgArrow from '../assets/wingArrow.svg'
 
 const CarouselContainer = styled.div`
-   display: flex;
-   align-items: center;
    height: 415px;
-   overflow: hidden;
 
-   position: relative; // for arrow
+   position: relative; // for arrow positioning
 
    @media (max-width: 768px) {
       height: 255px;
    }
 `
+
 const PhotoContainer = styled.div`
-   display: flex;
-   justify-content: center;
-   align-items: center;
    border-radius: 25px;
 
-   overflow: hidden;
-   max-width: 100%;
-   max-height: 100%;
-`
-const FlatPhoto = styled.img`
-   border-radius: 25px;
+   background-size: cover;
+   background-position: center;
+
    width: 100%;
+   height: 100%;
 `
 
 const ArrowPrev = styled.img`
@@ -80,22 +73,16 @@ export default function Carousel() {
    return (
       <CarouselContainer>
          {/* nav arrows on top */}
-         <ArrowPrev src={svgArrow} onClick={prevSlide} />
-         <ArrowNext src={svgArrow} onClick={nextSlide} />
+         {flatPictures.length > 1 && (
+            <div>
+               <ArrowPrev src={svgArrow} onClick={prevSlide} />
+               <ArrowNext src={svgArrow} onClick={nextSlide} />
+            </div>
+         )}
          {/* Pics */}
-         {flatPictures.map((img, index) => {
-            return (
-               <PhotoContainer key={index}>
-                  {index === currentPic && (
-                     <div>
-                        <FlatPhoto src={img} alt="Photos du logement" />
-                     </div>
-                  )}
-                  {/* Index of pic: {index} Img is url of pic: {img}
-                  )} */}
-               </PhotoContainer>
-            )
-         })}
+         <PhotoContainer
+            style={{ backgroundImage: `url(${flatPictures[currentPic]})` }}
+         ></PhotoContainer>
       </CarouselContainer>
    )
 }
