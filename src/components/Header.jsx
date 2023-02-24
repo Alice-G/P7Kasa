@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
-import colors from '../utils/style/colors'
+import colors from '../style/colors'
 
 import Navbar from './Navbar'
 import imgLogo from '../assets/logoKasa.jpg'

@@ -1,7 +1,7 @@
 import React from 'react'
 import LogoWhite from '../assets/logoKasaWhite.svg'
 import styled from 'styled-components'
-import colors from '../utils/style/colors'
+import colors from '../style/colors'
 
 const FooterContainer = styled.footer`
    display: flex;
